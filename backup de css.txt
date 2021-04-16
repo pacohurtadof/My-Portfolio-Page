@@ -1,0 +1,343 @@
+.App {
+  text-align: center;
+  border-bottom: 2px solid rgba(58, 56, 56, 0.671);
+  
+}
+
+div.Layout{
+  /*background-color: rgb(10, 10, 10);*/
+  background-color: #393f50;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+html, body, #app, #app>div {
+  height: 100%;
+  background-color: black;
+  overflow-x: hidden;
+}
+
+.extra-space{
+  height: 550px;
+}
+.App-logo {
+  height: 5%;
+  width: 3%;
+  pointer-events: none;
+  overflow:auto;
+  position: relative;
+  margin: auto 5px;
+  float: left;
+  
+}
+
+.socialNetworks-icons {
+  height: auto;
+  max-width: 100%;
+  min-width: 100%;
+  pointer-events: none;
+  overflow:auto;
+  position: relative;
+  margin: auto 5px;
+  float: left;
+  
+}
+
+.IBM-logo {
+  height: 10vmin;
+  pointer-events: none;
+  overflow:auto;
+  position: relative;
+  margin: auto 5px;
+  float: left;
+ 
+}
+
+
+/*@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}*/
+
+.App-header {
+  background-color: #000000;
+  /*min-height: 100vh;*/
+  height: 20%;
+  /*display: flex;*/
+ /* flex-direction: column;*/
+  align-items:flex-end;
+  justify-content: right;
+  font-size: calc(2px + 2vmin);
+  color: white;
+  margin: 0%;
+  padding: 0%;
+  
+}
+
+.name{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.wavy span{
+  position: relative;
+  display: inline-block;
+  font-size: 4em;
+  font-weight: bold;
+  
+}
+
+.francisco span{
+  font-size: 5em;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+
+.wavy h5{
+  color: #61dafb;
+}
+
+
+.wavy span:hover{
+  position: relative;
+  display: inline-block;
+  font-size: 4em;
+  animation: animate 1s ease-in-out infinite;
+  font-weight: bold;
+  
+}
+
+
+
+.button {
+  /*position: relative;
+  align-items: center;
+  font-size: 17px;
+  font-family: consolas;
+  font-weight:600;
+  color: white;
+  border-right: 1px solid rgba(58, 56, 56, 0.671);
+  border-left: 1px solid rgba(58, 56, 56, 0.671);
+  */
+  min-width: 2.5% !important;
+  max-width: 2.5% !important;
+
+}
+
+.menu-icon{
+  width: 10%;
+  height: 15%;
+  align-self:auto;
+}
+
+.button:hover{
+  color: #61dafb
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.menu-list a{
+  color: #ffffff;
+  font-size: 2.5em;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+}
+
+.menu-list a:hover{
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.menu{
+  height: 300px;
+}
+
+.MainPage p{
+  color: beige;
+  background-color: black;
+ /* height: 100vmax;*/
+  font-size: 40px;
+  display: flex;
+}
+
+.Element {
+  padding: 30px;
+  height: auto;
+  
+}
+
+.component {
+  height: auto;
+  
+}
+
+.ibm-name {
+  font-size: 50px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: #006699;
+}
+
+.contact-form-font {
+  font-size: 50px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #006699;
+}
+
+.sherwin-name {
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  color: #cc3333;
+  padding: 0px;
+  margin: 0px;
+}
+
+.williams-name {
+  font-size: 50px;
+  font-family: 'Open Sans', sans-serif;
+  color: #4b82af;
+  padding: 0px;
+  margin: 0px;
+}
+
+.cemex-name {
+  font-size: 50px;
+  font-family: 'Audiowide', cursive;
+  font-weight: bolder;
+  color: #053975;
+  padding: 0px;
+  margin: 0px;
+}
+
+.ibm-background{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+}
+
+.slide {
+  position: relative;
+  left: -270px;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  -webkit-animation-delay: 2s;
+  animation: slide 4s forwards, jump 2s infinite ;
+  animation-delay: 1s;
+  color: #dee0e0;
+}
+
+.slide-right {
+  position: relative;
+  overflow: hidden;
+  left: 1900px;
+  animation: slide-right 1s forwards ;
+  animation-delay: 0.1s;
+}
+
+.slide-away {
+  position: fixed;
+  height: auto;
+  width: auto;
+}
+
+.portfolio{
+  position: relative;
+  right: 200%;
+  background-color: #000000;
+  
+  
+}
+
+.contact-component{
+  position: relative;
+  right: 120%;
+  top: 40vh;
+  width: 100%;
+  
+}
+
+.contact-form{
+  background-color: #1f1f1f; /*111111*/
+}
+
+.portfolio-text{
+  position: relative;
+  overflow: hidden;
+  color: #dee0e0;
+}
+
+.contact-text{
+  position: relative;
+  overflow: hidden;
+  color: #dee0e0;
+  font-weight: bold;
+}
+
+
+
+@-webkit-keyframes slide {
+  100% { left: 0; }
+}
+
+@keyframes slide {
+  0%, 80%{left: -270px}
+  100% {left:-100px}
+}
+
+
+@keyframes slide-right {
+  0%{left: 1900px}
+  50% {left: 0px;}
+  100% {left:0px;}
+}
+
+@keyframes jump {
+  0% {
+    color: #61dafb;
+    transform: translate(0,0px) ;
+    
+  }
+  10% {
+    color: #61dafb;
+    transform: translate(0,10px) ;
+    
+  }
+  20%, 100%{
+    color: #ffffff;
+    transform: translate(0,0px) ;
+  }
+  
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animate {
+  0% {
+    color: #61dafb;
+    transform: scale(1) rotate3d(-1, 1, 0, 0deg);
+  }
+  20% {
+    color: #61dafb;
+    transform: scale(0.4) rotate3d(-1, 1, 0, -90deg);
+  }
+  40% {
+    transform: scale(1) rotate3d(-1, 1, 0, -180deg);
+  }
+  
+}
+
+
+  
+

@@ -1,0 +1,255 @@
+
+
+import React, {Component } from 'react';
+import '../assets/App.css';
+import logo from '../Logo.png';
+import IBMLogo from '../IBM-Logo.png';
+import IBMBackground from '../ibmbackground.jpg';
+import menuIcon from '../assets/menu-icon.png';
+import linkedinIcon from '../assets/linkedin-icon.png';
+import twitterIcon from '../assets/twitter-icon.png';
+import facebookIcon from '../assets/facebook-icon.png';
+import Contact from './contact';
+
+class Home extends Component{
+
+constructor(props) {
+  super(props);
+  this.state = {
+    slideRightAnimation: 'row Element pt-0 portfolio',
+    slideAwayAnimation : 'row Element pt-0 portfolio',
+    positionX: 0
+  };
+  this.firstTimeScrolling= true
+  //this.handleScroll = this.handleScroll.bind(this)
+}
+
+componentDidMount = () => {
+    document.addEventListener('scroll', this.handleScroll, true);
+}   
+handleScroll=(event)=>{
+    //console.log(event.srcElement.scrollTop)
+    if(event.srcElement.scrollTop>=600 && this.firstTimeScrolling ){
+      this.firstTimeScrolling= false
+      this.setState({slideRightAnimation:'row Element pt-0 portfolio slide-right'})
+    }
+    if(event.srcElement.scrollTop>=1050){
+      var moving= Math.round(event.srcElement.scrollTop-1050)
+      console.log(moving)
+      this.setState({positionX: moving, slideAwayAnimation:'row Element pt-0  portfolio slide-away' })
+    }
+    
+}
+render(){
+    
+    return(
+    <div className="Layout"  >
+      <div className="App container-fluid">
+        <div className="row App-header justify-content-center">
+          <div className="col-9">
+            <img className="App-logo " src={logo} alt="React Logo" />
+          </div>
+          <div className='col-1 p-0 button' >
+            <a type="button" href="" ><img className="socialNetworks-icons" src={linkedinIcon} alt="linkedin Logo" /></a>
+          </div>
+          <div className='col-1 button'>
+            <a type="button" ><img className="socialNetworks-icons" src={twitterIcon} alt="twitter Logo" /></a>
+          </div>
+          <div className='col-1 button'>
+            <a type="button" ><img className="socialNetworks-icons" src={facebookIcon} alt="facebook Logo" /></a>
+          </div>
+        </div>
+        
+      </div>
+      <div className="MainPage container-fluid">
+        <div className="row m-5 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row Element mt-5 ml-5 pt-5">
+          <div id="override" className="col-7 component pl-5 text-white name wavy "> 
+            <span>F</span>
+            <span>r</span>
+            <span>a</span>
+            <span>n</span>
+            <span>c</span>
+            <span>i</span>
+            <span>s</span>
+            <span>c</span>
+            <span>o</span>
+            <span>&nbsp;</span>
+            <span>H</span>
+            <span>u</span>
+            <span>r</span>
+            <span>t</span>
+            <span>a</span>
+            <span>d</span>
+            <span>o</span>
+            <h5>Front-end Web Developer | Software Developer</h5>
+          </div>
+          <div className="col-3 menu text-right menu-list ">
+            {/*<img className="App-logo" src={logo} alt="React Logo" />*/}
+              <img className="menu-icon" src={menuIcon} alt="React Logo" />
+              <div className="row">
+                <a type="button" className="col-12 m-2">Home</a>
+              </div>
+              <div className="row">
+                <a type="button" className="col-12 m-2">Skills</a>
+              </div>
+              <div className="row">
+                <a type="button" className="col-12 m-2">Contact</a>
+              </div>
+              
+          </div>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div id="override" className="row ml-5 pb-5  slide name">
+          <span>Scroll Down ▼ </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className={this.state.slideAwayAnimation}  style={{left : this.state.positionX}}>
+          <div className="row Element mt-5 pt-5 pb-0"  onScroll={this.handleScroll}>
+            <div id="override" className="col-12 component pl-5   text-white name wavy "> 
+              <span></span>
+              <span>M</span>
+              <span>y</span>
+              <span>&nbsp;</span>
+              <span>P</span>
+              <span>o</span>
+              <span>r</span>
+              <span>t</span>
+              <span>f</span>
+              <span>o</span>
+              <span>l</span>
+              <span>i</span>
+              <span>o</span>
+            </div>
+          </div>
+          {/*ibm*/}
+          <div className={this.state.slideRightAnimation}>
+            <div className="row Element ml-5 pl-5 pb-0 portfolio-text name">
+              <div  className="col-2  ibm-name"><span>IBM</span></div>
+            </div>
+            <div className="row Element ml-5 pl-5 mr-5 pt-1 pb-0 portfolio-text name ibm">
+              <div  className="col-12 "><span>Starting in 2019, I began my journey as a front end developer by getting an intership at IBM. I had previous experience in this area, but having to deliver projects as quick as possible really boosted my front end skills and specially my react knowledge.
+              Through these two last years, I've been in different projects within IBM, working along with other companies fullfilling their software needs and keeping them up and running.</span></div>
+              
+            </div>
+            {/*sherwin*/}
+            <div className="row Element ml-5 pl-5 pb-0 portfolio-text name">
+              <div  className="col-12 m-0 "><span className="sherwin-name">Sherwin-</span><span className="williams-name">Williams</span></div>
+            </div>
+            <div className="row Element ml-5 pl-5 mr-5 pr-5 pt-1 pb-0 portfolio-text name sherwin">
+              <div  className="col-12 "><span>Starting with Sherwin williams, within their project, "ColorSnap", there was a need for a new platform where one could administrate all multimedia which had to be up in the app. Alongside my team, we developed this project using React and Redux for a dynamic interface, where one could see a visual simulation in real time and interact with it.   </span></div>
+              <div className="col-8">
+              </div>
+            </div>
+            {/*cemex*/}
+            <div className="row Element ml-5 pl-5 pb-0 portfolio-text name">
+              <div  className="col-12 m-0 "><span className="cemex-name" style={{color: '#E3303D'}}>/</span><span className="cemex-name">/CEMEX</span></div>
+            </div>
+            <div className="row Element ml-5 pl-5 mr-5 pt-1 portfolio-text name cemex">
+              <div  className="col-12 "><span>In Cemex I had to leave React for angular for a while. Supporting over 30 different apps used by the CEMEX team every day, we were using technologies like Angular (JS and version 8, mostly) for the front end and .NET for the back end, SQL, Azure and Mongodb for the database, etc.</span></div>
+              <div className="col-8">
+              </div>
+            </div>
+          </div>
+          <div id="override" className="row ml-5 pb-5  slide name">
+            <span>Scroll Down ▼ </span>
+          </div>
+          <div className="row m-4 pb-4 pt-4">
+            <span> </span>
+          </div>
+          <div className="row m-4 pb-4 pt-4">
+            <span> </span>
+          </div>
+          <div className="row m-4 pb-4 pt-4">
+            <span> </span>
+          </div>
+          <div className="row m-4 pb-4 pt-4">
+            <span> </span>
+          </div>
+          <div className="row m-4 pb-4 pt-4">
+            <span> </span>
+          </div>
+          <div className="row m-4 pb-4 pt-4">
+            <span> </span>
+          </div>
+          <div className="row m-4 pb-4 pt-4">
+            <span> </span>
+          </div>
+          <Contact></Contact>
+         
+        </div>
+        
+        <div className="extra-space row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4">
+          <span> </span>
+        </div>
+      </div>
+    </div>
+    )
+}
+
+}
+
+export default Home;	
