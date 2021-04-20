@@ -25,7 +25,8 @@ constructor(props) {
     slideRightAnimationPortfolio: 'portfolio-hidden',
     slideAwayAnimationPortfolio : '',
     slideRightAnimationContact:'contact-hidden',
-    positionX: 0
+    positionX: 0,
+    ibmBoxClass:''
   };
   this.firstTimeScrolling= true;
   this.goingUp=false;
@@ -36,32 +37,39 @@ componentDidMount = () => {
     document.addEventListener('scroll', this.handleScroll, true);
 }   
 handleScroll=(event)=>{
-    console.log(event.srcElement.scrollTop)
-    if(event.srcElement.scrollTop>=600 /*&& this.firstTimeScrolling*/ ){
-      this.firstTimeScrolling= true
-      this.goingUp=true
-      this.setState({slideRightAnimationPortfolio:'animate__animated animate__bounceInRight'})
-    }
-    if(event.srcElement.scrollTop<600  && this.goingUp  ){
-      this.firstTimeScrolling= true
-      this.goingUp=false
-      this.setState({slideRightAnimationPortfolio:'animate__animated animate__bounceOutRight '})
-    }
-    if(event.srcElement.scrollTop>2000 ){
-      console.log("paco")
-      this.firstTimeScrolling= true
-      this.goingUp=false
-      this.setState({slideRightAnimationContact:'animate__animated animate__backInLeft '})
-    }
-    if(event.srcElement.scrollTop<2000 ){
-      this.setState({slideRightAnimationContact:'animate__animated animate__bounceOutRight'})
-    }
-    /*if(event.srcElement.scrollTop>=1100){
-      var moving= Math.round(event.srcElement.scrollTop-1100)
-      //console.log(moving)
-      this.setState({positionX: moving, slideAwayAnimation:'row Element pt-0  portfolio slide-away' })
-    }*/
-    
+    if(event.target.tagName==='BODY'){
+      if(event.srcElement.scrollTop>=600 /*&& this.firstTimeScrolling*/ ){
+        this.firstTimeScrolling= true
+        this.goingUp=true
+        this.setState({slideRightAnimationPortfolio:'animate__animated animate__bounceInRight'})
+      }
+      if(event.srcElement.scrollTop<600  && this.goingUp  ){
+        this.firstTimeScrolling= true
+        this.goingUp=false
+        this.setState({slideRightAnimationPortfolio:'animate__animated animate__bounceOutRight '})
+      }
+      if(event.srcElement.scrollTop>2000 ){
+        this.firstTimeScrolling= true
+        this.goingUp=false
+        this.setState({slideRightAnimationContact:'animate__animated animate__backInLeft '})
+      }
+      if(event.srcElement.scrollTop<2000 ){
+        this.setState({slideRightAnimationContact:'animate__animated animate__bounceOutRight'})
+      }
+      /*if(event.srcElement.scrollTop>=1100){
+        var moving= Math.round(event.srcElement.scrollTop-1100)
+        //console.log(moving)
+        this.setState({positionX: moving, slideAwayAnimation:'row Element pt-0  portfolio slide-away' })
+      }*/
+  }
+}
+
+descriptionHandler= ()=>{
+  
+  this.setState({ibmBoxClass:'hvr-sweep-to-top'})
+  //document.getElementsByClassName("front face")[0].setAttribute("hidden","")
+ // document.getElementsByClassName("back face")[0].removeAttribute("hidden")
+  //console.log(a)
 }
 render(){
     
@@ -149,33 +157,50 @@ render(){
               <span>e</span>
             </div>
           </div>
-          {/*ibm*/}
-          <div className={"row Element pt-0 portfolio-description "+this.state.slideRightAnimationPortfolio}>
-            <div className="row Element pb-0 mb-0 portfolio-text name">
-              <div  className="col-2  ibm-name"><span>IBM</span></div>
+          <div class="container-cards">
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                    <div className="ibm-name">
+                    <span className="">IBM</span>
+                  </div>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>Starting in 2019, I began my journey as a front end developer by getting an internship at IBM. I had previous experience in this area, but having to deliver projects as quick as possible really boosted my front end skills and specially my react knowledge.
+                    Through these two last years, I've been in different projects within IBM, working along with other companies fullfilling their software needs and keeping them up and running.
+                    </p>
+                    </div>
+                </div>
             </div>
-            <div className="row Element  portfolio-text name ibm">
-              <div  className="col-12 "><span>Starting in 2019, I began my journey as a front end developer by getting an intership at IBM. I had previous experience in this area, but having to deliver projects as quick as possible really boosted my front end skills and specially my react knowledge.
-              Through these two last years, I've been in different projects within IBM, working along with other companies fullfilling their software needs and keeping them up and running.</span></div>
-              
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                    <div  className="col-12 m-0 "><span className="sherwin-name">Sherwin-</span><span className="williams-name">Williams</span></div>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>Starting with Sherwin williams, within their project, "ColorSnap", there was a need for a new platform where one could administrate all multimedia which had to be up in the app. Alongside my team, we developed this project using React and Redux for a dynamic interface, where one could see a visual simulation in real time and interact with it.</p>
+                            <a href="#">Read More</a>
+                    </div>
+                </div>
             </div>
-            {/*sherwin*/}
-            <div className="row Element  pb-0 portfolio-text name">
-              <div  className="col-12 m-0 "><span className="sherwin-name">Sherwin-</span><span className="williams-name">Williams</span></div>
-            </div>
-            <div className="row Element  portfolio-text name sherwin">
-              <div  className="col-12 "><span>Starting with Sherwin williams, within their project, "ColorSnap", there was a need for a new platform where one could administrate all multimedia which had to be up in the app. Alongside my team, we developed this project using React and Redux for a dynamic interface, where one could see a visual simulation in real time and interact with it.   </span></div>
-              <div className="col-8">
-              </div>
-            </div>
-            {/*cemex*/}
-            <div className="row Element  pb-0 portfolio-text name">
-              <div  className="col-12 m-0 "><span className="cemex-name" style={{color: '#E3303D'}}>/</span><span className="cemex-name">/CEMEX</span></div>
-            </div>
-            <div className="row Element portfolio-text name cemex">
-              <div  className="col-12 "><span>In Cemex I had to leave React for angular for a while. Supporting over 30 different apps used by the CEMEX team every day, we were using technologies like Angular (JS and version 8, mostly) for the front end and .NET for the back end, SQL, Azure and Mongodb for the database, etc.</span></div>
-              <div className="col-8">
-              </div>
+            <div class="card">
+                <div class="face face1">
+                    <div class="content">
+                      <div className="row Element  pb-0 portfolio-text name">
+                        <div  className="col-12 m-0 "><span className="cemex-name" style={{color: '#E3303D'}}>/</span><span className="cemex-name">/CEMEX</span></div>
+                      </div>
+                    </div>
+                </div>
+                <div class="face face2">
+                    <div class="content">
+                        <p>Now at Cemex, I had to leave React for angular for a while. Supporting over 30 different apps used by the CEMEX team every day, we were using technologies like Angular (JS and version 8, mostly) for the front end and .NET for the back end, SQL, Azure and Mongodb for the database, etc.</p>
+                            <a href="#">Read More</a>
+                    </div>
+                </div>
             </div>
           </div>
           <div className="row m-4 pb-2 pt-2">
