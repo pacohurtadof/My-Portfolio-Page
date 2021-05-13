@@ -2,20 +2,14 @@
 
 import React, {Component } from 'react';
 import {
-    BrowserRouter as Router,
     Link
   } from "react-router-dom";
 import '../assets/App.css';
 import logo from '../Logo.png';
-import CodeImage from '../assets/code-image.png';
-import CodeImage2 from '../assets/code-image2.png';
-import CodeImage3 from '../assets/code-image3.png';
-import IBMBackground from '../ibmbackground.jpg';
 import menuIcon from '../assets/menu-icon.png';
 import linkedinIcon from '../assets/linkedin-icon.png';
 import twitterIcon from '../assets/twitter-icon.png';
 import facebookIcon from '../assets/facebook-icon.png';
-import Contact from './contact';
 
 class Skills extends Component{
 
@@ -77,14 +71,20 @@ render(){
           <span> </span>
         </div>
         <div className="row Element p-0">
-          <div  className="col-9 component text-white  wavy francisco "> 
-            <span style={{color:'#61dafb'}}>S</span>
-            <span>k</span>
-            <span>i</span>
-            <span>l</span>
-            <span>l</span>
-            <span>s</span>
-            <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</h5>
+          <div className="col-9 component text-white wavy francisco"> 
+            <div className="animate__animated animate__jello">
+              <span style={{color:'#61dafb'}}>S</span>
+              <span>k</span>
+              <span>i</span>
+              <span>l</span>
+              <span>l</span>
+              <span>s</span>
+            </div>
+            <div className="skills-paragraph">
+              <p>As a front end engineer, apart from working with HTML5, CSS and Bootstrap, I've had experience with frameworks, such as Angular (different versions) and React (Redux and hooks), the latter being the one I feel most comfortable with. </p>
+              <p>I've also worked with .NET for the connection to the back end and have some knowledge in Spring Boot as well. As for databases, I've work with SQL and MongoDB for the most part.</p>
+              <p>Feel free to ask me for my resume to see the complete list of skills</p>
+            </div>
           </div>
           <div className="col-3 menu text-right menu-list ">
             {/*<img className="App-logo" src={logo} alt="React Logo" />*/}
@@ -101,41 +101,7 @@ render(){
               
           </div>
         </div>
-        <div className=" text-center mt-5">
-          <div className="row justify-content-md-center  skills-container">
-            <span className="list-of-skills col-1 left" style={{["--i"]: 2}} >JavaScript </span>
-            <span className="list-of-skills col-1 middle " style={{["--i"]: -1}}>Angular </span>
-            <span className="list-of-skills col-1 right" style={{["--i"]: -2}}>SQL </span>
-          </div>
-          <div className="row justify-content-md-center  skills-container">
-            <span className="list-of-skills col-2 left" style={{["--i"]: 1}} >Firebase </span>
-            <span className="list-of-skills col-2 right" style={{["--i"]: -1}}>Angular </span>
-          </div>
-          <div className="row justify-content-md-center">
-            <span className="list-of-skills col-2 middle  align-self-center" style={{["--i"]: -1}}>React </span>
-          </div>
-          <div className="row justify-content-md-center  skills-container">
-            <span className="list-of-skills col-2 left" style={{["--i"]: 1}}>Typescript </span>
-            <span className="list-of-skills col-2 right" style={{["--i"]: -1}}>Azure </span>
-          </div>
-        </div>
-          <section class="stage">
-          <figure class="ball"><span class="shadow"></span>
-            <div className=" text-center mt-5 pt-5">
-                    <div className="row justify-content-md-center  skills-container">
-                      <span className="list-of-skills col-2 left" style={{["--i"]: 1}} >JavaScript </span>
-                      <span className="list-of-skills col-2 right" style={{["--i"]: -1}}>Angular </span>
-                    </div>
-                    <div className="row justify-content-md-center">
-                      <span className="list-of-skills col-2 middle align-self-center" style={{["--i"]: -1}}>React </span>
-                    </div>
-                    <div className="row justify-content-md-center  skills-container">
-                      <span className="list-of-skills col-2 left" style={{["--i"]: 1}}>CSS </span>
-                      <span className="list-of-skills col-2 right" style={{["--i"]: -1}}>Angular </span>
-                    </div>
-                  </div>
-          </figure>
-        </section>
+        
         </div>
         
     </div>
