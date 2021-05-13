@@ -2,7 +2,6 @@
 
 import React, {Component } from 'react';
 import {
-  BrowserRouter as Router,
   Link
 } from "react-router-dom";
 import '../assets/App.css';
@@ -10,7 +9,6 @@ import logo from '../Logo.png';
 import CodeImage from '../assets/code-image.png';
 import CodeImage2 from '../assets/code-image2.png';
 import CodeImage3 from '../assets/code-image3.png';
-import IBMBackground from '../ibmbackground.jpg';
 import menuIcon from '../assets/menu-icon.png';
 import linkedinIcon from '../assets/linkedin-icon.png';
 import twitterIcon from '../assets/twitter-icon.png';
@@ -48,12 +46,12 @@ handleScroll=(event)=>{
         this.goingUp=false
         this.setState({slideRightAnimationPortfolio:'animate__animated animate__bounceOutRight '})
       }
-      if(event.srcElement.scrollTop>2000 ){
+      if(event.srcElement.scrollTop>1900 ){
         this.firstTimeScrolling= true
         this.goingUp=false
         this.setState({slideRightAnimationContact:'animate__animated animate__backInLeft '})
       }
-      if(event.srcElement.scrollTop<2000 ){
+      if(event.srcElement.scrollTop<1900 ){
         this.setState({slideRightAnimationContact:'animate__animated animate__bounceOutRight'})
       }
       /*if(event.srcElement.scrollTop>=1100){
@@ -81,13 +79,13 @@ render(){
             <img className="App-logo " src={logo} alt="React Logo" />
           </div>
           <div className='col-1 button' >
-            <a type="button" href="https://www.linkedin.com/in/francisco-hurtado-felipe/" ><img className="socialNetworks-icons" src={linkedinIcon} alt="linkedin Logo" /></a>
+            <a type="button" href="https://www.linkedin.com/in/francisco-hurtado-felipe/" ><img className="socialNetworks-icons" src={linkedinIcon} alt="" /></a>
           </div>
           <div className='col-1 button'>
-            <a type="button" ><img className="socialNetworks-icons" src={twitterIcon} alt="twitter Logo" /></a>
+            <a href="https://www.twitter.com" type="button" ><img className="socialNetworks-icons" src={twitterIcon} alt="" /></a>
           </div>
           <div className='col-1 button'>
-            <a type="button" ><img className="socialNetworks-icons" src={facebookIcon} alt="facebook Logo" /></a>
+            <a href="https://www.facebook.com" type="button" ><img className="socialNetworks-icons" src={facebookIcon} alt="" /></a>
           </div>
         </div>
         
@@ -118,7 +116,7 @@ render(){
             <span>a</span>
             <span>d</span>
             <span>o</span>
-            <h5>Front-end Web Developer | Software Developer</h5>
+            <h5>Front-end Web Developer | Software Developer | Dog Enthusiast</h5>
           </div>
           <div className="col-3 menu text-right menu-list ">
             {/*<img className="App-logo" src={logo} alt="React Logo" />*/}
@@ -141,8 +139,8 @@ render(){
         </div>
         <div className="layout-portfolio">
         <div className="main container">
-        <div className={"row Element section-title pt-0 portfolio pl-5 pr-5 "+this.state.slideRightAnimationPortfolio}>
-          <div className="row Element mt-5 pt-5  mb-4 pl-0"  onScroll={this.handleScroll}>
+        <div className={" Element section-title pt-0 portfolio pl-5 pr-5 "+this.state.slideRightAnimationPortfolio}>
+          <div className="row Element mt-5 pt-5  pl-0"  onScroll={this.handleScroll}>
             <div className="col-12 pl-0 component text-white name wavy "> 
               <span></span>
               <span style={{color:'#61dafb'}}>E</span>
@@ -156,64 +154,64 @@ render(){
               <span>c</span>
               <span>e</span>
             </div>
+            <div><h5 style={{color:"white"}}>"It ain't much, but it's honest work"</h5></div>
           </div>
-          <div class="container-cards">
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
+          <div className="row"><p style={{color:"white", "fontWeight":"500"}}>A small compilation of my work in the last two years as a front end developer. Time where I've been discovering new passions and learning more about technologies that I like.</p></div>
+          <div className="container-cards">
+            <div className="card">
+                <div className="face face1">
+                    <div className="content">
                     <div className="ibm-name">
                     <span className="">IBM</span>
                   </div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="content">
-                        <p>Starting in 2019, I began my journey as a front end developer by getting an internship at IBM. I had previous experience in this area, but having to deliver projects as quick as possible really boosted my front end skills and specially my react knowledge.
-                    Through these two last years, I've been in different projects within IBM, working along with other companies fullfilling their software needs and keeping them up and running.
+                <div className="face face2">
+                    <div className="content">
+                        <p>Starting in 2019, I began my journey as a front end developer by getting an internship at IBM. I'd had previous experience in this area, but now, having to deliver projects as quick as possible, really boosted my front end skills, and specially my react knowledge.
+                    Through these two last years, I'd been in different projects within IBM, working along with different companies and teams, fullfilling their software needs and keeping them up and running.
                     </p>
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
-                    <div  className="col-12 m-0 "><span className="sherwin-name">Sherwin-</span><span className="williams-name">Williams</span></div>
+            <div className="card">
+                <div className="face face1">
+                    <div className="content">
+                    <div  className="col-12 m-0 text-center"><span className="sherwin-name">Sherwin-</span><span className="williams-name">Williams</span></div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="content">
+                <div className="face face2">
+                    <div className="content">
                         <p>Starting with Sherwin williams, within their project, "ColorSnap", there was a need for a new platform where one could administrate all multimedia which had to be up in the app. Alongside my team, we developed this project using React and Redux for a dynamic interface, where one could see a visual simulation in real time and interact with it.</p>
-                            <a href="#">Read More</a>
+                          
                     </div>
                 </div>
             </div>
-            <div class="card">
-                <div class="face face1">
-                    <div class="content">
+            <div className="card">
+                <div className="face face1">
+                    <div className="content">
                       <div className="row Element  pb-0 portfolio-text name">
                         <div  className="col-12 m-0 "><span className="cemex-name" style={{color: '#E3303D'}}>/</span><span className="cemex-name">/CEMEX</span></div>
                       </div>
                     </div>
                 </div>
-                <div class="face face2">
-                    <div class="content">
-                        <p>Now at Cemex, I had to leave React for angular for a while. Supporting over 30 different apps used by the CEMEX team every day, we were using technologies like Angular (JS and version 8, mostly) for the front end and .NET for the back end, SQL, Azure and Mongodb for the database, etc.</p>
-                            <a href="#">Read More</a>
+                <div className="face face2">
+                    <div className="content">
+                        <p>Now at Cemex, I had to leave React for angular for a while. Supporting over 30 different apps used by the CEMEX team every day, we were using technologies like Angular (JS and version 8, mostly) for the front end and .NET for the back end, SQL, Azure and Mongodb for the database, etc.
+
+                        </p>
                     </div>
                 </div>
             </div>
           </div>
-          <div className="row m-4 pb-2 pt-2">
-            <span> </span>
-          </div>
-          <div className="row m-4 pb-4 pt-4 code-icons">
+        </div>
+        <div className="row mt-0 mr-5 ml-5 mb-0 pb-5 ">
+          <span className="scroll-down jump">Scroll Down ▼ </span>
+        </div>
+        <div className="row m-4 pb-4 pt-4 code-icons">
             <img className="code-image one" src={CodeImage} alt="code image" />
             <img className="code-image two" src={CodeImage2} alt="code image 2" />
             <img className="code-image three" src={CodeImage3} alt="code image 3" />
-          </div>
-        </div>
-        <div className="row m-5 mb-0 pb-5 ">
-          <span className="scroll-down jump">Scroll Down ▼ </span>
         </div>
         <div className={"contact "+this.state.slideRightAnimationContact}>
           <Contact inHome={true}></Contact>
